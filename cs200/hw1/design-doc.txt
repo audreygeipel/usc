@@ -1,0 +1,62 @@
+Overview
+--------
+This is CSCI-200 (Fall 2011) - HW #1. Program is written in Java language.
+Purpose of this assignment is writing our first java program.
+Program is basic side-scrolling game. Details of the game is written under Game Desc.
+
+Game Desc
+---------
+Game is about spaceship traveling through meteors and enemies.
+User controls the spaceship to avoid meteors and enemies.
+There are also other items such as "Bonus". This item increases users score.
+Spaceship can move up, down or can stay at it's current height.
+Meteors are stable, but enemies and bonueses can move up or down randomly.
+
+Features
+--------
++ Start new game
++ Resume game 
++ Quit 
+
+Classes (more info in class files)
+----------------------------------
++ Application
++ Bonus
++ Enemy
++ Game
++ IO
++ Meteor
++ Player
++ Space
++ World 
+
+High-level Architecture
+-----------------------
++ Application class is the core class
++ It starts game based on user's command
++ If if user want to resume the game, it tells game class to first load the save file.
++ Game class stores everything about game
++ It has variables called world, player etc. All these classes belongs to game class.
++ World class is responsible for map and printing it.
++ World class all the objects on the map.
++ Player class is responsible for players information such as position and score.
++ Also there is a static class called IO. It just has some short cut IO functions.
++ And lastly there are object classes for map items.
++ Map is stored as 2 level int array. Every int in this array is a pixel on the screen.
++ These integer tells the which type of objects sits in that pixel
++ Every object has its own unique id.
++ These map objects classes are also static. We do not store map as an array of classes.
++ Application -> Game -> (Player -> (score, position), World -> (map))
+
+User Interface
+--------------
+User interface is command line. User writes desired command and presses enter.
++ Menu Options
+  - 1. Start new game: starts new game
+  - 2. Resume game: loads save file, and starts game 
+  - 3. Quit
++ Game Controls
+  - (u)p - moves player up
+  - (d)own - moves player down
+  - (s)tay - does not move player
+  - (q)uit - saves game and quites

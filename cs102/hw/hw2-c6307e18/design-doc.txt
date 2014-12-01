@@ -1,0 +1,118 @@
+Overview
+--------
+
+This program is personal video game database. User can create their own game library. Also they can add games to their favorite list.
+
+Features
+--------
+
++ User can enter video games into the database.
++ User can print out all the video games in his database.
++ User can add video games in the database to a "favorites" list.
++ User can remove video games from his "favorites" list.
++ User can print out all the video games in his "favorites" list.
++ User can terminate application.
+
+Classes (more info in class files)
+----------------------------------
+
+* Game class
+  + contains one instance of game.
+  + has these variables:
+    - int id
+    - double price
+    - bool is_favorite
+    - int platform
+    - int category
+    - int rating
+    - string name
+    - string publisher
+    - string purchased_at
+  + has these methods:
+    - void print_table
+    - void print
+* GameList class
+  + contain information about a game list
+  + has these variables
+    - string name
+    - vector<Game *> games
+  + has these methods
+    - bool add_game(Game *)
+    - void remove_game(int)
+    - void remove_game(Game)
+    - bool includes(Game)
+    - void print()
+* Database class
+  + contains user's game library
+  + is the container for game class.
+  + has this variable:
+    - vector<Game> games
+  + has these methods:
+    - void add(Game)
+    - void favorite(int)
+    - void unfavorite(int)
+    - void print_all()
+    - void print_favorites()
+* CLI namespace
+  + means Command line Interface
+  + is responsible from getting data and printing data to command line
+  + has these variables:
+    - vector<string> CLI::platforms
+    - vector<string> CLI::categories
+    - vector<string> CLI::ratings
+  + has these functions:
+    - int get_command(int command = 0);
+    - int get_id
+    - double get_price
+    - int get_platform
+    - int get_category
+    - int get_rating
+    - string get_name
+    - string get_publisher
+    - string get_purchased_at
+    - string print_category
+    - string print_platform
+    - string print_rating
+
+Global Data/Functions
+---------------------
+
++ main.cpp
+  - void show_menu
+  - int main
+
+High-level Architecture
+-----------------------
+
++ There are two main classes in this software(database and game). 
++ Database class has a vector variable which contains all the games user has. 
++ This class interacts with it's games.
++ Also there is a namespace called CLI which means Command Line Interface
++ This namespace is responsible from all the input validations.
+
+User Interface
+--------------
+
++ User will interact with software through command line.
++ When program is executed first time, menu/table appears.
++ User makes selection by typing menu item's number.
++ Every menu item has it's own small steps.
++ After selected command is finished.
++ User is prompted to make a new menu selection. 
++ These are the main options:
+  - (1) List all video games in the database
+  - (2) Add a video game to the database
+  - (3) Remove video game from the database
+  
+  - (4) Create new game list
+  - (5) Remove game list
+
+
+  - (6) Add a video game to the list
+  - (7) Remove a video game from the list
+  - (8) List all the games in the list
+
+  - (9) Export database to a file
+
+  - (10) Show menu
+  - (11) Quit

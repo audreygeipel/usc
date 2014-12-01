@@ -1,0 +1,7 @@
+Compile
+-------
++ To compile the program run "javac Application.java"
++ To execute the program run "java Application"
++ Java 1.6 may increase the performance
++ Running over ssh may cause serious performance issues because of heavy graphics
+

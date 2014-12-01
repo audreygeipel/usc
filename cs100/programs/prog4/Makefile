@@ -1,0 +1,22 @@
+# July 23, 2008
+# Name: Mark Redekopp
+# email: redekopp@usc.edu
+
+CC = g++
+CFLAGS = -g -Wall -fopenmp
+LDFLAGS =
+SRCS = 	chromakey_par.cpp
+
+
+all: $(SRCS) chromakey_par
+
+.cpp.o:
+	$(CC) $(CFLAGS) -c $<
+
+chromakey_par : chromakey_par.o bmplib.h
+	@echo "chromakey_par"
+	@echo "Compiling and linking"
+	$(CC) $(CFLAGS) chromakey_par.o bmplib.o -o chromakey_par
+
+clean:
+	rm -f chromakey_par chromakey_par.o  *~

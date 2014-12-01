@@ -1,0 +1,35 @@
+Overview
+--------
+
+This is simulation of Game of Life
+
+Features
+--------
+
++ You can create a Game of life
++ You can switch between generations
++ You can switch multiple generations
++ You can clear the table
++ You can reset the environment
+
+Global Data/Functions
+---------------------
+
++ There is a main file.
++ There is a class called World.
+
+High-level Architecture
+-----------------------
+
++ There is a world class which is representive of table.
++ In this class we store every thing about the generation.
+
+User Interface
+--------------
+
+(1) Step one generation forward
+(2) Step multiple generations forward
+(3) Toggle states of grid cells (and reset the generation number)
+(4) Clear the grid (and reset the generation number)
+(5) Quit
+ 

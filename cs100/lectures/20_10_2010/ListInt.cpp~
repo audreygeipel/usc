@@ -1,0 +1,80 @@
+#include <iostream>
+#include "ListInt.h"
+
+using namespace std;
+
+ListInt::ListInt()
+{
+  cout << "***Creating ListInt object" << endl;
+  head = NULL;
+}
+
+ListInt::~ListInt()
+{
+  cout << "***Deleteing ListInt object" << endl;
+  IntItem *tmp;
+  // Add your code here to delete all IntItem structures in the list
+  
+  while (head->next != NULL){
+    tmp = head;
+    delete tmp;
+    head = head->next;
+  }
+  delete head;
+}
+
+void ListInt::push_back(int new_val)
+{
+  IntItem *tmp;
+  tmp = head;
+  while (tmp->next != NULL){
+    tmp = tmp->next
+  }
+  
+  tmp->next = new IntItem_s;
+  tmp->next->val = new_val;
+}
+
+int ListInt::pop_front()
+{
+  IntItem *tmp;
+  
+  tmp = head;
+  head = head->next;
+  delete tmp;
+}
+
+int ListInt::peek_front()
+{
+  return head->val;
+}
+
+void ListInt::print_list()
+{
+  IntItem *tmp;
+  tmp = head;
+  while (tmp->next != NULL){
+    cout << tmp->val << ' ' << endl;
+    tmp = tmp->next
+  }
+}
+
+IntItem *ListInt::find(int find_val)
+{
+  IntItem *tmp;
+  tmp = head;
+  while (tmp->val != find_val){
+    tmp = tmp->next
+  }
+  
+  if (tmp->val == find_val){
+    return 0
+  }
+}
+
+bool ListInt::remove(int del_val)
+{
+
+}
+
+// Add code for list_size() here

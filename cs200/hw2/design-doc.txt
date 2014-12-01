@@ -1,0 +1,109 @@
+Project Overview
+----------------
+This is CSCI-200 (Fall 2011) - HW #2.Program is written in Java language.
+Purpose of this assignment is converting our previous HW #1 in to a Gui based game.
+Program is basic side-scrolling game. Details of the game is written under Game Desc.
+
+Game Desc
+---------
+Game is about spaceship traveling through meteors and enemies.
+User controls the spaceship to avoid meteors and enemies.
+User earns points based on how for he has gone and his bonuses
+
+Game Dynamics
+-------------
++ Player
+  - moves up, down or forward
+  - can fire bullets
+  - has limited number of bullets
++ Bonus
+  - moves up or down randomly
+  - if user encounters, it increases user's score
++ Enemy
+  - moves up or down, if moves it choses the direction user at
+  - if user encounters, it kills the player
++ Mine
+  - does not move
+  - if user encounters, it gives 10 bullets to user
++ Meteor
+  - does not move
+  - if user encounters, it kills the player
++ Bullet
+  - moves forward 2 times
+  - if another object encounters, it destorys it self and that object 
++ Space 
+  - does not have any affects on other items
+
+Application Features
+--------------------
++ Start new game
++ Resume game 
++ Load saved game
++ Save current game
++ Quit 
+
+High-level Architecture
+-----------------------
++ Application class is the core class
++ It manages game class and deals with command line interface
++ Game class stores everything about game
++ It is responsible for starting, resuming, quiting, saving and loading the game. 
++ World class manages all the objects in the map.
++ Map is stored as an ArrayList of MapObjects
++ MapObject class is an abstract class for all the map objects
++ GameFrame class is the main gui class
++ It renders 2 different panels in the frame, these are WorlPanel and ScorePanel
++ It uses BorderLayout to locate these 2 panels
++ WorldPanel class is responsible for printing the world.
++ It uses GridLayout to manage objects.
++ ScorePanel class is responsible for printing the user related information
+
++ Application
+  - Game 
+    * Player 
+    * World 
+      + MapObjects
+    * GameFrame
+      + WorldPanel
+      + ScorePanel   
+
+Classes (more info in class files)
+----------------------------------
++ Application
++ Game
++ IO
++ World 
++ MapObject
+  - Player
+  - Bonus
+  - Enemy
+  - Mine
+  - Meteor
+  - Bullet
+  - Space
++ GameFrame
++ WorldPanel
++ ScorePanel
++ InputHandler
+
+User Interface
+--------------
+User interface is command line. User writes desired command and presses enter.
+
++ Command line Interface
+  - 1. New game / Resume game: starts new game if game has not been started
+  - 2. Load saved game: loads save file, and starts game 
+  - 3. Save current game: saves current game into a file. 
+  - 4. Quit
++ Gui Interface
+  - up - moves player up
+  - down - moves player down
+  - right - does not move player
+  - space - fires a bullet
+  - escape - resumes game
+
+Citation
+--------
++ All of the images used in the game are found on the Google.
++ http://pixelatedgeek.com/2010/10/the-game-designer-next-door-dr-dms-interview-with-dave-dobson/
+

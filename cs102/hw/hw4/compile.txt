@@ -1,0 +1,21 @@
+Compiling the software
+
+# There are two different compiling options(automatic and manual)
+
+Automatic
+
+# Makefile is included in the package.
+# Only step is running "make" command in application's directory through command line
+# Or If you want to clean the application directory you can call "make clean" command.
+# This command removed all compiled files.
+
+Manual
+
+# To compile software manually there are few steps which has to be done.
+# These commands should be called one by one in application's directory
+  * g++ -g -Wall -c table.cpp
+  * g++ -g -Wall -c world.cpp
+  * g++ -g -Wall -c main.cpp
+  * g++ -g -Wall table.o world.o main.o -o main
+# And program is compiled successfully.
+
